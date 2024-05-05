@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Boutique.css"
+import { Link } from 'react-router-dom'; //IMPORTIT HEDHI BECH NNAJEM NINKI DES PAGES
 
 const  Boutique = (props) => {
      const boutiques = [
@@ -106,7 +107,7 @@ const  Boutique = (props) => {
               <img className="boutique-image" src={boutique.image} alt={boutique.title} />
               <h3>{boutique.title}</h3>
               <p>{boutique.description}</p>
-              <a href={boutique.link} target="_blank" rel="noopener noreferrer">Visit Boutique</a>
+              <Link to="assurance\src\pages\Boutiques\productDescription\ProductDescription.js">Visit Boutique</Link> {/* Use Link instead of anchor tag */}
             </div>
           ))}
         </div>
