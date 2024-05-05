@@ -24,6 +24,7 @@ const ProductDetails = ({ product, index }) => {
 function BoutiqueProducts(props) {
   const location = useLocation();
   const products = location.state.products
+  console.log(products)
     const [currentIndex, setCurrentIndex] = useState(0);
 
   return ( <div className='container'>
