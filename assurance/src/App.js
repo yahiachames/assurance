@@ -6,7 +6,7 @@ import Menu from './pages/Menu';
 import Acceuil from './pages/Acceuil';
 import Boutique from './pages/Boutiques/Boutique';
 import Police from './pages/Police';
-import AtelierReparation from './pages/AtelierReparation';
+import AtelierReparation from './pages/AteulierReparation/AtelierReparation';
 import Reclamation from './pages/Reclamation';
 import GestionContrat from './pages/GestionContrat';
 import TraitementReclamation from './pages/TraitementReclamation';
