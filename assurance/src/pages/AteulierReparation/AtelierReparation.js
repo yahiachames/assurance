@@ -8,7 +8,7 @@ function AtelierReparation(props) {
                 <h1>Atelier de réparation</h1>
             </div>
 
-            <div className="container">
+            <div className="container-atelier-reparation">
                 <div className="square">
                     <h2>Commande de réparation</h2>
                     <p>Marque: Samsung</p>
