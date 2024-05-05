@@ -10,6 +10,7 @@ import AtelierReparation from './pages/AtelierReparation';
 import Reclamation from './pages/Reclamation';
 import GestionContrat from './pages/GestionContrat';
 import TraitementReclamation from './pages/TraitementReclamation';
+import BoutiqueProducts from './pages/Boutiques/BoutiqueProducts/BoutiqueProducts';
 import "./App.css"
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       <Navbar />
       <Routes>
 
-         
+         <Route path="/boutique_products" element={<BoutiqueProducts/>} />
         <Route path="/boutique" element={<Boutique/>} />
         <Route path="/police" element={<Police/>} />
         <Route path="/atelier_reparation" element={<AtelierReparation/>} />
