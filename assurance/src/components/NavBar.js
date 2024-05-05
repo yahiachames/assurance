@@ -29,8 +29,8 @@ const Navbar = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Your Assurance Service
         </Typography>
-        <Button color="inherit" component={RouterLink} to="/menu">Menu</Button>
-        <Button color="inherit" component={RouterLink} to="/acceuil">Acceuil</Button>
+     
+        <Button color="inherit" component={RouterLink} to="/">Acceuil</Button>
         <Button color="inherit" component={RouterLink} to="/boutique">Boutique</Button>
         <Button color="inherit" component={RouterLink} to="/police">Police</Button>
         <Button color="inherit" component={RouterLink} to="/atelier_reparation">Atelier Réparation</Button>
