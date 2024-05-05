@@ -12,13 +12,14 @@ import GestionContrat from './pages/GestionContrat';
 import TraitementReclamation from './pages/TraitementReclamation';
 import BoutiqueProducts from './pages/Boutiques/BoutiqueProducts/BoutiqueProducts';
 import "./App.css"
+import AcheterAssurance from './pages/Boutiques/AcheterAssurance/AcheterAssurance';
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-
+        <Route path="/achter_assurance" element={<AcheterAssurance/>} />
          <Route path="/boutique_products" element={<BoutiqueProducts/>} />
         <Route path="/boutique" element={<Boutique/>} />
         <Route path="/police" element={<Police/>} />
