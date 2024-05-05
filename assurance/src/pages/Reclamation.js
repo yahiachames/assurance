@@ -3,7 +3,7 @@ import React from 'react';
 function Reclamation(props) {
     return (
         <div>
-            
+            Reclamation
         </div>
     );
 }
