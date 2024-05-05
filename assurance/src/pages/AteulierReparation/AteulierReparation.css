@@ -1,12 +1,23 @@
 .container-atelier-reparation {
+    
+
+    
+    height: 100vh;
+
+    /* Fixed width */
+
+    /* Fixed height */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    /* Border color */
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    /* Shadow */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom,#ffffff, #1976D2);
-
 }
 
 .title {
@@ -22,10 +33,8 @@
 .square {
     padding: 20px;
     text-align: center;
-    border: 2px solid #007bff;
-    border-radius: 10px;
-    background: linear-gradient(to bottom, #b1ceeb, #ffffff);
-
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
