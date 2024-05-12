@@ -20,8 +20,10 @@ export const AppContext = createContext();
 
 function App() {
   // Define your shared object
+  
   const [sharedObject, setSharedObject] = useState({
     // Your shared data goes here
+    contracts : [] , 
     data: [
   {
     category: 'Computers',
@@ -38,7 +40,7 @@ function App() {
             link: 'https://example.com/laptop',
             image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_Nokia_3310.png/800px-%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_Nokia_3310.png', // Product image
             marque: 'Example Marque',
-            price: '$999',
+            price: 999,
             seriesNumber: 'THL1001'
           },
           {
@@ -47,7 +49,7 @@ function App() {
             link: 'https://example.com/desktop-pc',
             image: 'https://pisces.bbystatic.com/image2/BestBuy_US/dam/pol-REF-1029637-240408_DER-32be5d1c-08d3-4754-9d53-430504363d78.jpg;maxHeight=350;maxWidth=1000', // Product image
             marque: 'Example Marque',
-            price: '$1499',
+            price: 1499,
             seriesNumber: 'THD2001'
           },
           {
@@ -56,7 +58,7 @@ function App() {
             link: 'https://example.com/tablet',
             image: 'https://example.com/tablet.jpg', // Product image
             marque: 'Example Marque',
-            price: '$599',
+            price: 599,
             seriesNumber: 'THT3001'
           }
         ]
@@ -78,7 +80,7 @@ function App() {
             link: 'https://example.com/smartphone',
             image: 'https://example.com/smartphone.jpg', // Product image
             marque: 'Example Marque',
-            price: '$799',
+            price: 799,
             seriesNumber: 'MGS1001'
           },
           {
@@ -87,7 +89,7 @@ function App() {
             link: 'https://example.com/feature-phone',
             image: 'https://example.com/feature-phone.jpg', // Product image
             marque: 'Example Marque',
-            price: '$199',
+            price: 199,
             seriesNumber: 'MGP2001'
           },
           {
@@ -96,7 +98,7 @@ function App() {
             link: 'https://example.com/accessories',
             image: 'https://example.com/accessories.jpg', // Product image
             marque: 'Example Marque',
-            price: '$29',
+            price: 29,
             seriesNumber: 'MGA3001'
           }
         ]
@@ -118,7 +120,7 @@ function App() {
             link: 'https://example.com/refrigerator',
             image: 'https://example.com/refrigerator.jpg', // Product image
             marque: 'Example Marque',
-            price: '$1299',
+            price: 1299,
             seriesNumber: 'AWR1001'
           },
           {
@@ -127,7 +129,7 @@ function App() {
             link: 'https://example.com/washing-machine',
             image: 'https://example.com/washing-machine.jpg', // Product image
             marque: 'Example Marque',
-            price: '$899',
+            price: 899,
             seriesNumber: 'AWW2001'
           },
           {
@@ -136,7 +138,7 @@ function App() {
             link: 'https://example.com/microwave-oven',
             image: 'https://example.com/microwave-oven.jpg', // Product image
             marque: 'Example Marque',
-            price: '$199',
+            price: 199,
             seriesNumber: 'AWM3001'
           }
         ]
@@ -147,7 +149,7 @@ function App() {
   // Add more categories and boutiques as needed
 ]
   });
-
+console.log("aPP JS sharedObject",sharedObject)
   return (
     // Wrap your application with the context provider
     <AppContext.Provider value={{ sharedObject, setSharedObject }}>
