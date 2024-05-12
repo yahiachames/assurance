@@ -1,11 +1,15 @@
 // components/Navbar.js
-import React from 'react';
+import React , {useState , useContext} from 'react';
 import { AppBar, Toolbar, Typography, Button, Menu, MenuItem } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import HeroSection from './HeroSection';
 import Footer from './Footer';
 import SignupForm from './SignupForm';
 import DescriptionSection from './DescriptionSection';
+import { AppContext } from '../App';
+
+
+
 
 
 const Navbar = () => {
@@ -21,6 +25,9 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const { sharedObject } = useContext(AppContext);
+  const navigate = useNavigate();
+    const boutiques = sharedObject.data
 
   return (<>
   
@@ -49,7 +56,7 @@ const Navbar = () => {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <MenuItem component={RouterLink} to="/reclamation" onClick={handleClose}>Réclamation</MenuItem>
+          <MenuItem component={RouterLink} to="/reclamation" onClick={() => handleClose({ state: {  state: boutiques  } })}>Réclamation</MenuItem>
           <MenuItem component={RouterLink} to="/gestion_contrat" onClick={handleClose}>Gestion de Contrat</MenuItem>
           <MenuItem component={RouterLink} to="/traitement_reclamation" onClick={handleClose}>Traitement de Réclamation</MenuItem>
         </Menu>

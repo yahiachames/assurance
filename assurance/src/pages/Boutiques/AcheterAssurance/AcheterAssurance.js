@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import "./AcheterAssurance.css"
+import Modal from '../../../components/Modal/Modal';
+import BoutiqueOrder from '../BoutiqueOrder/BoutiqueOrder';
 
 function AcheterAssurance() {
-    const location = useLocation();
+  const location = useLocation();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
      const [formData, setFormData] = useState({
     boutiqueTitle: '',
@@ -26,12 +33,15 @@ function AcheterAssurance() {
       ...prevState,
       [name]: type === 'checkbox' ? checked : value
     }));
-  };
+    };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add validation logic here
     console.log(formData);
+    console.log(location)
+    toggleModal()
   };
   return (
    <form className="form-container" onSubmit={handleSubmit}>
@@ -161,7 +171,8 @@ function AcheterAssurance() {
           required
         />
       </div>
-      <button type="submit">Suivant</button>
+      <button type="submit" >Suivant</button>
+      <Modal isOpen={isModalOpen} toggleModal={toggleModal}> <BoutiqueOrder /></Modal>
     </form>
   )
 }
