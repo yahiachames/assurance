@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import "./AcheterAssurance.css"
 import Modal from '../../../components/Modal/Modal';
 import BoutiqueOrder from '../BoutiqueOrder/BoutiqueOrder';
+import OrderConfirmation from '../OrderConfirmation/OrderConfirmation';
+import { AppContext } from '../../../App';
+
 
 function AcheterAssurance() {
+  const { sharedObject , setSharedObject } = useContext(AppContext);
   const location = useLocation();
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOrderOpen, setIsModalOrderOpen] = useState(false);
+  console.log("sharedObject",sharedObject["contracts"])
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+   const toggleOrderModal = () => {
+    setIsModalOrderOpen(!isModalOrderOpen);
   };
 
      const [formData, setFormData] = useState({
@@ -39,8 +48,9 @@ function AcheterAssurance() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add validation logic here
-    console.log(formData);
-    console.log(location)
+    console.log("formData" , formData);
+    console.log("location" , location)
+    setSharedObject({...sharedObject , contracts : [...sharedObject.contracts,{ contract: formData, product: location.state }]})
     toggleModal()
   };
   return (
@@ -172,7 +182,8 @@ function AcheterAssurance() {
         />
       </div>
       <button type="submit" >Suivant</button>
-      <Modal isOpen={isModalOpen} toggleModal={toggleModal}> <BoutiqueOrder /></Modal>
+      <Modal isOpen={isModalOpen} toggleModal={toggleModal}> <BoutiqueOrder data={{ contract: formData, product: location.state }}  orderFunc={toggleOrderModal} /></Modal>
+            <Modal isOpen={isModalOrderOpen} toggleModal={toggleOrderModal}> <OrderConfirmation contract={{contract : formData }} /></Modal>
     </form>
   )
 }

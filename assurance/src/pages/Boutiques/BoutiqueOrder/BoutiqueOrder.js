@@ -1,24 +1,24 @@
 import React from 'react';
 import './BoutiqueOrder.css'; // Import CSS file for styling
 
-const BoutiqueOrder = () => {
-  const boutiqueName = "My Boutique"; // Replace with the name of your boutique
-  const productName = "Product Name"; // Replace with the name of your product
-  const productDescription = "Product Description"; // Replace with the description of your product
-  const productPrice = 100; // Replace with the price of your product
-  const startDate = new Date("2024-05-12");
-  const endDate = new Date("2024-05-19");
-  const assurancePrice = productPrice * (endDate.getDate() - startDate.getDate()); // Replace with your assurance calculation logic
+const BoutiqueOrder = ({ data , orderFunc }) => {
+    const product = data["product"]
+    const contract = data["contract"]
+  const boutiqueName = contract["boutiqueTitle"]; // Replace with the name of your boutique
+  const productName = product["title"]; // Replace with the name of your product
+  const productDescription = product["description"]; // Replace with the description of your product
+  const productPrice = product["price"]; // Replace with the price of your product
+  const startDate = new Date(contract["startDate"]);
+    const endDate = new Date(contract["endDate"]);
+    const assuranceUnitPrice = contract["pricePerDay"]
+  const assurancePrice = assuranceUnitPrice * (endDate.getDate() - startDate.getDate()); // Replace with your assurance calculation logic
 
   const handlePayment = () => {
     // Handle payment logic here
-    console.log("Payment processed successfully!");
+      console.log("Payment processed successfully!");
+      orderFunc()
   };
 
-  const handleCommand = () => {
-    // Handle command logic here
-    console.log("Command executed!");
-  };
 
   const total = productPrice + assurancePrice;
 
