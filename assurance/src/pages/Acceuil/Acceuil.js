@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { Container, Typography, Button, Box } from '@mui/material';
-import backgroundImg from '../assets/landingpage.jpg' // Import your background image
-
+import backgroundImg from '../../assets/landingpage.jpg' // Import your background image
+import {Link, useNavigate} from 'react-router-dom';
 
 function Acceuil(props) {
+  const navigate = useNavigate();
     return  (
         <Box
           sx={{
@@ -44,7 +45,7 @@ function Acceuil(props) {
                 id tempus lacus sodales. Mauris quis placerat dui. Vestibulum auctor ligula vel nisi tincidunt,
                 vel ultrices eros feugiat.
               </Typography>
-              <Button variant="contained" color="primary" size="large" fullWidth>
+              <Button variant="contained" color="primary" size="large" fullWidth onClick={() => navigate('/Login',{state:"hello"})}>
                 Sign Up
               </Button>
             </Container>

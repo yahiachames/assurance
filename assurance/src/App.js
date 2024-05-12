@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import Home from './pages/Home'; // Import your page components
 import Menu from './pages/Menu';
-import Acceuil from './pages/Acceuil';
+import Acceuil from './pages/Acceuil/Acceuil';
 import Boutique from './pages/Boutiques/Boutique';
 import Police from './pages/Police';
 import AtelierReparation from './pages/AteulierReparation/AtelierReparation';
@@ -13,12 +13,14 @@ import TraitementReclamation from './pages/TraitementReclamation';
 import BoutiqueProducts from './pages/Boutiques/BoutiqueProducts/BoutiqueProducts';
 import "./App.css"
 import AcheterAssurance from './pages/Boutiques/AcheterAssurance/AcheterAssurance';
+import Login from './pages/Acceuil/Login';
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
+      <Route path="/login" element={<Login/>} />
         <Route path="/achter_assurance" element={<AcheterAssurance/>} />
          <Route path="/boutique_products" element={<BoutiqueProducts/>} />
         <Route path="/boutique" element={<Boutique/>} />
