@@ -1,0 +1,41 @@
+.boutique-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+    margin-bottom: 20px;
+}
+
+.services-section {
+    margin-bottom: 20px;
+}
+
+.total-section {
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-button,
+.command-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.payment-button:hover,
+.command-button:hover {
+    background-color: #0056b3;
+}

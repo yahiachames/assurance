@@ -16,7 +16,7 @@ const ProductDetails = ({ product, index }) => {
               <div className="model-field">Model: {product.model}</div>
               <div className="price-field">Price: {product.price}</div>
               <div className="series-number">Series Number: {product.seriesNumber}</div>
-              <Button  color='primary' onClick={() => navigate('/achter_assurance',{state:"hello"})} >Suivant</Button>
+              <Button  color='primary' onClick={() => navigate('/achter_assurance',{state: product})} >Suivant</Button>
             </div>)
 }
 
