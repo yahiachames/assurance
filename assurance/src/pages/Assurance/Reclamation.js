@@ -1,13 +1,15 @@
-import React , {useState} from 'react';
-import { Button} from '@mui/material';
+import React , {useState, useContext} from 'react';
+import {Button} from '@mui/material';
 import './Reclamation.css'; // Import the CSS file
 import Modal from '../../components/Modal/Modal';
 import ReclamationForm from './popup_ajouter reclamation/ajouter reclamation';
+import { AppContext } from '../../App';
 
 
 
 
-const ProductBox = ({ajouter_function}) => {
+const ProductBox = ({ajouter_function, data}) => {
+console.log(data)
  const handel_ajouer_function = () => {
   ajouter_function();
  }
@@ -17,23 +19,23 @@ const ProductBox = ({ajouter_function}) => {
       <div className="product-details">
         <div className="detail-item">
           <span>Marque:</span>
-          <span>Samsung</span>
+          <span>{data["product"]["marque"]}</span>
         </div>
         <div className="detail-item">
           <span>Modèle:</span>
-          <span>M315</span>
+          <span>{data["product"]["title"]}</span>
         </div>
         <div className="detail-item">
           <span>Numéro de série:</span>
-          <span>123456789</span>
+          <span>{data["product"]["seriesNumber"]}</span>
         </div>
         <div className="detail-item">
           <span>Valide depuis:</span>
-          <span>01/01/2022</span>
+          <span>{data["contract"]["startDate"]}</span>
         </div>
         <div className="detail-item">
           <span>Valide jusqu'à:</span>
-          <span>01/01/2023</span>
+          <span>{data["contract"]["endDate"]}</span>
         </div>
       </div>
       <div className="button-container">
@@ -48,7 +50,9 @@ const ProductBox = ({ajouter_function}) => {
 
 
 const Reclamation = () => {
- 
+  const { sharedObject , setSharedObject } = useContext(AppContext);
+  console.log(sharedObject, "test_sharedObject")
+const contracts = sharedObject["contracts"]
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -75,13 +79,12 @@ const Reclamation = () => {
             </div>
 
       <div className="product-boxes-container">
-        <ProductBox ajouter_function={toggleModal}/>
-        <ProductBox ajouter_function={toggleModal}/>
-        <ProductBox ajouter_function={toggleModal}/>
-        {/* Add more ProductBox components as needed */}
+        { 
+        contracts.map((contract,index) => <ProductBox ajouter_function={toggleModal} data = {contract}/>) 
+        }
       </div>
       
-      
+        
         <Modal isOpen={isModalOpen} toggleModal={toggleModal}>
           <ReclamationForm closeModal= {handleCloseModal} openModal= {handleOpenModal}/>
         </Modal>
