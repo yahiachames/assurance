@@ -43,6 +43,11 @@ function AcheterAssurance() {
       [name]: type === 'checkbox' ? checked : value
     }));
     };
+
+    const handleOrder = () => {
+      toggleOrderModal()
+      setSharedObject({...sharedObject , contracts : [...sharedObject.contracts,{ contract: formData, product: location.state }]})
+    }
   
 
   const handleSubmit = (e) => {
@@ -50,7 +55,7 @@ function AcheterAssurance() {
     // Add validation logic here
     console.log("formData" , formData);
     console.log("location" , location)
-    setSharedObject({...sharedObject , contracts : [...sharedObject.contracts,{ contract: formData, product: location.state }]})
+    
     toggleModal()
   };
   return (
@@ -182,7 +187,7 @@ function AcheterAssurance() {
         />
       </div>
       <button type="submit" >Suivant</button>
-      <Modal isOpen={isModalOpen} toggleModal={toggleModal}> <BoutiqueOrder data={{ contract: formData, product: location.state }}  orderFunc={toggleOrderModal} /></Modal>
+      <Modal isOpen={isModalOpen} toggleModal={toggleModal}> <BoutiqueOrder data={{ contract: formData, product: location.state }}  orderFunc={handleOrder} /></Modal>
             <Modal isOpen={isModalOrderOpen} toggleModal={toggleOrderModal}> <OrderConfirmation contract={{contract : formData }} /></Modal>
     </form>
   )
