@@ -9,7 +9,7 @@ import Police from './pages/Police';
 import AtelierReparation from './pages/AteulierReparation/AtelierReparation';
 import Reclamation from './pages/Assurance/Reclamation';
 import GestionContrat from './pages/GestionContrat';
-import TraitementReclamation from './pages/TraitementReclamation';
+import TraitementReclamation from './pages/TraitementReclamation/TraitementReclamation/TraitementReclamation';
 import BoutiqueProducts from './pages/Boutiques/BoutiqueProducts/BoutiqueProducts';
 import "./App.css"
 import AcheterAssurance from './pages/Boutiques/AcheterAssurance/AcheterAssurance';

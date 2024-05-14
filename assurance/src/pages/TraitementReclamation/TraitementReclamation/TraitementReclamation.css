@@ -1,0 +1,21 @@
+.traitement-reclamation{
+
+display  : flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height:  90vh;
+
+
+}
+
+.traitements-container{
+
+    display  : flex;
+   width : 90%;
+    align-items: center;
+    justify-content: center;
+    height : 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
