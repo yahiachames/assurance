@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Checkbox, TextField } from '@mui/material';
-import './ajouter reclamation.css'; // Import your CSS file for styling
+import './ajouter_reclamation.css'; // Import your CSS file for styling
 
 const ReclamationForm = ({openModal,closeModal}) => {
   const [stolen, setStolen] = useState(false);

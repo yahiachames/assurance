@@ -1,0 +1,41 @@
+/* ajouter_reclamation.css */
+
+.reclamation-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reclamation-form h4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.reclamation-form .MuiFormControl-root {
+    margin-bottom: 20px;
+}
+
+.reclamation-form .MuiCheckbox-root {
+    margin-right: 10px;
+}
+
+.reclamation-form .button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reclamation-form .button-container button {
+    flex: 1;
+    margin: 0 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .reclamation-form {
+        max-width: 100%;
+        border-radius: 0;
+    }
+}

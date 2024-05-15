@@ -13,7 +13,8 @@ import TraitementReclamation from './pages/TraitementReclamation/TraitementRecla
 import BoutiqueProducts from './pages/Boutiques/BoutiqueProducts/BoutiqueProducts';
 import "./App.css"
 import AcheterAssurance from './pages/Boutiques/AcheterAssurance/AcheterAssurance';
-import Login from './pages/Acceuil/Login';
+import Login from './pages/Login/Login';
+import SignupPage from './pages/Register/Register';
 
 // Create a context object
 export const AppContext = createContext();
@@ -156,6 +157,7 @@ console.log("aPP JS sharedObject",sharedObject)
       <Router>
         <Navbar />
         <Routes>
+          <Route path="/Register" element={<SignupPage/>} />
         <Route path="/Login" element={<Login/>} />
           <Route path="/achter_assurance" element={<AcheterAssurance />} />
           <Route path="/boutique_products" element={<BoutiqueProducts />} />
