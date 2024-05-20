@@ -15,6 +15,8 @@ import "./App.css"
 import AcheterAssurance from './pages/Boutiques/AcheterAssurance/AcheterAssurance';
 import Login from './pages/Login/Login';
 import SignupPage from './pages/Register/Register';
+import { Provider } from "react-redux";
+import store from "./redux/store/store"
 
 // Create a context object
 export const AppContext = createContext();
@@ -153,6 +155,7 @@ function App() {
 console.log("aPP JS sharedObject",sharedObject)
   return (
     // Wrap your application with the context provider
+    <Provider  store={store()}>
     <AppContext.Provider value={{ sharedObject, setSharedObject }}>
       <Router>
         <Navbar />
@@ -170,7 +173,8 @@ console.log("aPP JS sharedObject",sharedObject)
           <Route path="/" element={<Acceuil />} />
         </Routes>
       </Router>
-    </AppContext.Provider>
+      </AppContext.Provider>
+      </Provider>
   );
 }
 
